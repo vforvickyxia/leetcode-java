@@ -1,4 +1,4 @@
-# 🎮 vic's leetcode journey
+# 🎮 vic's leetcode journey - Java
 
 hey! i'm Vic — software engineer by day, leetcode grinder by night — problem solver by obsession. this repo is my ongoing war with data structures. they're tough. i'm tougher. ⚔️
 
