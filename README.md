@@ -20,13 +20,14 @@ I started this because I wanted to get better at problem-solving. I also started
 
 ## 📊 progress
 
-![solved](https://img.shields.io/badge/solved-3-brightgreen)
+![solved](https://img.shields.io/badge/solved-4-brightgreen)
 
 | # | Problem | Topic |
 |---|---------|-------|
 | 1 | 1. Two Sum | — |
 | 2 | 1512. Number of Good Pairs | Hash Map |
 | 3 | 39. Combination Sum | Backtracking |
+| 4 | 9. Palindrome Number | — |
 
 ---
 
