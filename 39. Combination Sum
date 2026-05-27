@@ -1,5 +1,5 @@
 //backtrack
-//Time Complexity: O(N^(T/M)) Space Complexity: O(T/M)
+//Time: O(N^(T/M)) Space: O(T/M)
 //where N = number of candidates, T = target, M = smallest candidate.
 
 import java.util.*;
