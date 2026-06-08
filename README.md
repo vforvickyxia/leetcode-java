@@ -20,7 +20,7 @@ I started this because I wanted to get better at problem-solving. I also started
 
 ## 📊 progress
 
-![solved](https://img.shields.io/badge/solved-7-brightgreen)
+![solved](https://img.shields.io/badge/solved-8-brightgreen)
 
 | # | Problem | Topic |
 |---|---------|-------|
@@ -28,9 +28,10 @@ I started this because I wanted to get better at problem-solving. I also started
 | 2 | 1114. Print in Order | — |
 | 3 | 1115. Print FooBar Alternately | — |
 | 4 | 1116. Print Zero Even Odd | — |
-| 5 | 1512. Number of Good Pairs | Hash Map |
-| 6 | 39. Combination Sum | Backtracking |
-| 7 | 9. Palindrome Number | — |
+| 5 | 1117. Building H2O | — |
+| 6 | 1512. Number of Good Pairs | Hash Map |
+| 7 | 39. Combination Sum | Backtracking |
+| 8 | 9. Palindrome Number | — |
 
 ---
 
