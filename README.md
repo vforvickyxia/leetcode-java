@@ -20,16 +20,17 @@ I started this because I wanted to get better at problem-solving. I also started
 
 ## 📊 progress
 
-![solved](https://img.shields.io/badge/solved-6-brightgreen)
+![solved](https://img.shields.io/badge/solved-7-brightgreen)
 
 | # | Problem | Topic |
 |---|---------|-------|
 | 1 | 1. Two Sum | — |
 | 2 | 1114. Print in Order | — |
-| 3 | 1116. Print Zero Even Odd | — |
-| 4 | 1512. Number of Good Pairs | Hash Map |
-| 5 | 39. Combination Sum | Backtracking |
-| 6 | 9. Palindrome Number | — |
+| 3 | 1115. Print FooBar Alternately | — |
+| 4 | 1116. Print Zero Even Odd | — |
+| 5 | 1512. Number of Good Pairs | Hash Map |
+| 6 | 39. Combination Sum | Backtracking |
+| 7 | 9. Palindrome Number | — |
 
 ---
 
