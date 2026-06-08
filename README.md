@@ -20,7 +20,7 @@ I started this because I wanted to get better at problem-solving. I also started
 
 ## 📊 progress
 
-![solved](https://img.shields.io/badge/solved-9-brightgreen)
+![solved](https://img.shields.io/badge/solved-10-brightgreen)
 
 | # | Problem | Topic |
 |---|---------|-------|
@@ -30,9 +30,10 @@ I started this because I wanted to get better at problem-solving. I also started
 | 4 | 1116. Print Zero Even Odd | — |
 | 5 | 1117. Building H2O | — |
 | 6 | 1195. Fizz Buzz Multithreaded | — |
-| 7 | 1512. Number of Good Pairs | Hash Map |
-| 8 | 39. Combination Sum | Backtracking |
-| 9 | 9. Palindrome Number | — |
+| 7 | 1226. The Dining Philosophers | — |
+| 8 | 1512. Number of Good Pairs | Hash Map |
+| 9 | 39. Combination Sum | Backtracking |
+| 10 | 9. Palindrome Number | — |
 
 ---
 
