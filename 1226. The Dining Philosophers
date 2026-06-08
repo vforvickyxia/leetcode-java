@@ -1,0 +1,65 @@
+import java.util.concurrent.Semaphore;
+
+public class DiningPhilosophersMain {
+
+    static class DiningPhilosophers {
+        private Semaphore[] forks = new Semaphore[5];
+        private Semaphore limit = new Semaphore(4);
+
+        public DiningPhilosophers() {
+            for (int i = 0; i < 5; i++) {
+                forks[i] = new Semaphore(1);
+            }
+        }
+
+        public void wantsToEat(int philosopher,
+                               Runnable pickLeftFork,
+                               Runnable pickRightFork,
+                               Runnable eat,
+                               Runnable putLeftFork,
+                               Runnable putRightFork) throws InterruptedException {
+            int left  = philosopher;
+            int right = (philosopher + 1) % 5;
+
+            limit.acquire();
+
+            forks[left].acquire();
+            forks[right].acquire();
+
+            pickLeftFork.run();
+            pickRightFork.run();
+            eat.run();
+            putLeftFork.run();
+            putRightFork.run();
+
+            forks[left].release();
+            forks[right].release();
+
+            limit.release();
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        DiningPhilosophers table = new DiningPhilosophers();
+        Thread[] threads = new Thread[5];
+
+        for (int i = 0; i < 5; i++) {
+            final int id = i;
+            threads[i] = new Thread(() -> {
+                try {
+                    table.wantsToEat(
+                        id,
+                        () -> System.out.println("Philosopher " + id + " picks LEFT fork"),
+                        () -> System.out.println("Philosopher " + id + " picks RIGHT fork"),
+                        () -> System.out.println("Philosopher " + id + " is EATING"),
+                        () -> System.out.println("Philosopher " + id + " puts LEFT fork"),
+                        () -> System.out.println("Philosopher " + id + " puts RIGHT fork")
+                    );
+                } catch (Exception e) { e.printStackTrace(); }
+            });
+        }
+
+        for (Thread t : threads) t.start();
+        for (Thread t : threads) t.join();
+    }
+}
