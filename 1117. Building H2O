@@ -1,0 +1,42 @@
+import java.util.concurrent.Semaphore;
+
+public class BuildingH2O {
+
+    static class H2O {
+        private Semaphore semH    = new Semaphore(2);
+        private Semaphore semO    = new Semaphore(1);
+        private Semaphore barrier = new Semaphore(0);
+
+        public H2O() {}
+
+        public void hydrogen(Runnable releaseHydrogen) throws InterruptedException {
+            semH.acquire();
+            // releaseHydrogen.run() outputs "H". Do not change or remove this line.
+            releaseHydrogen.run();
+            barrier.release();
+        }
+
+        public void oxygen(Runnable releaseOxygen) throws InterruptedException {
+            semO.acquire();
+            // releaseOxygen.run() outputs "O". Do not change or remove this line.
+            releaseOxygen.run();
+            barrier.release();
+            barrier.acquire(3); 
+            semH.release(2);    
+            semO.release(1);
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        String water = "OOHHHH"; // n=2
+        H2O h2o = new H2O();
+
+        for (char c : water.toCharArray()) {
+            if (c == 'H') {
+                new Thread(() -> { try { h2o.hydrogen(() -> System.out.print("H")); } catch (Exception e) { e.printStackTrace(); } }).start();
+            } else {
+                new Thread(() -> { try { h2o.oxygen(() -> System.out.print("O")); } catch (Exception e) { e.printStackTrace(); } }).start();
+            }
+        }
+    }
+}
