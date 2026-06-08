@@ -1,0 +1,53 @@
+import java.util.concurrent.Semaphore;
+import java.util.function.IntConsumer;
+
+public class PrintZeroEvenOdd {
+
+    static class ZeroEvenOdd {
+        private int n;
+        private Semaphore semZero = new Semaphore(1);
+        private Semaphore semOdd  = new Semaphore(0);
+        private Semaphore semEven = new Semaphore(0);
+
+        public ZeroEvenOdd(int n) {
+            this.n = n;
+        }
+
+        public void zero(IntConsumer printNumber) throws InterruptedException {
+            for (int i = 1; i <= n; i++) {
+                semZero.acquire();
+                // printNumber.accept(x) outputs "x". Do not change or remove this line.
+                printNumber.accept(0);
+                if (i % 2 == 1) semOdd.release();
+                else            semEven.release();
+            }
+        }
+
+        public void even(IntConsumer printNumber) throws InterruptedException {
+            for (int i = 2; i <= n; i += 2) {
+                semEven.acquire();
+                // printNumber.accept(x) outputs "x". Do not change or remove this line.
+                printNumber.accept(i);
+                semZero.release();
+            }
+        }
+
+        public void odd(IntConsumer printNumber) throws InterruptedException {
+            for (int i = 1; i <= n; i += 2) {
+                semOdd.acquire();
+                // printNumber.accept(x) outputs "x". Do not change or remove this line.
+                printNumber.accept(i);
+                semZero.release();
+            }
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        ZeroEvenOdd zeo = new ZeroEvenOdd(5);
+        Thread t1 = new Thread(() -> { try { zeo.zero(x -> System.out.print(x)); } catch (Exception e) { e.printStackTrace(); } });
+        Thread t2 = new Thread(() -> { try { zeo.even(x -> System.out.print(x)); } catch (Exception e) { e.printStackTrace(); } });
+        Thread t3 = new Thread(() -> { try { zeo.odd(x -> System.out.print(x)); } catch (Exception e) { e.printStackTrace(); } });
+        t1.start(); t2.start(); t3.start();
+        t1.join(); t2.join(); t3.join();
+    }
+}
