@@ -20,7 +20,7 @@ I started this because I wanted to get better at problem-solving. I also started
 
 ## 📊 progress
 
-![solved](https://img.shields.io/badge/solved-5-brightgreen)
+![solved](https://img.shields.io/badge/solved-6-brightgreen)
 
 | # | Problem | Topic |
 |---|---------|-------|
@@ -29,6 +29,7 @@ I started this because I wanted to get better at problem-solving. I also started
 | 3 | 1512. Number of Good Pairs | Hash Map |
 | 4 | 39. Combination Sum | Backtracking |
 | 5 | 9. Palindrome Number | — |
+| 6 | Code Testcase Testcase Test Result 1116. Print Zero Even Odd | — |
 
 ---
 
